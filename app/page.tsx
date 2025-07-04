@@ -14,6 +14,8 @@ import { PlayerDialog } from "./components/player-dialog"
 import { PlayerCard } from "./components/player-card"
 import { PlayerDetailDialog } from "./components/player-detail-dialog"
 import { AuthDialog } from "./components/auth-dialog"
+import { PWAInstallButton } from "./components/pwa-install-button"
+import { OfflineIndicator } from "./components/offline-indicator"
 
 export default function HomePage() {
   const { user, profile, loading: authLoading } = useAuth()
@@ -150,6 +152,7 @@ export default function HomePage() {
             <p className="text-slate-300">アミューズメントポーカーのプレイヤー情報を記録・共有</p>
           </div>
           <div className="flex items-center gap-4">
+            <PWAInstallButton />
             <div className="flex items-center gap-2 text-slate-300">
               <User className="h-4 w-4" />
               <span className="text-sm">{profile?.nickname || user?.email}</span>
@@ -173,6 +176,9 @@ export default function HomePage() {
             <AlertDescription className="text-red-100">{error}</AlertDescription>
           </Alert>
         )}
+
+        {/* オフライン通知 */}
+        <OfflineIndicator />
 
         {/* 統計カード */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">

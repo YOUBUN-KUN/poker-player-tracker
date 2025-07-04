@@ -9,7 +9,26 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "ポーカープレイヤートラッカー",
   description: "アミューズメントポーカーのプレイヤー情報を記録・共有",
-    generator: 'v0.dev'
+  manifest: "/manifest.json",
+  themeColor: "#1e293b",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "PokerTracker",
+  },
+  formatDetection: {
+    telephone: false,
+  },
+  openGraph: {
+    type: "website",
+    siteName: "ポーカープレイヤートラッカー",
+    title: "ポーカープレイヤートラッカー",
+    description: "アミューズメントポーカーのプレイヤー情報を記録・共有",
+  },
+  icons: {
+    shortcut: "/icon-192x192.png",
+    apple: [{ url: "/icon-192x192.png" }, { url: "/icon-512x512.png", sizes: "512x512" }],
+  },
 }
 
 export default function RootLayout({
