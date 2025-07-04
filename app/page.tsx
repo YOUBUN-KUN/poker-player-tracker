@@ -130,8 +130,8 @@ export default function HomePage() {
     return (
       <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800 flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-white mb-4">🃏 ポーカープレイヤートラッカー</h1>
-          <p className="text-slate-300 mb-8">アミューズメントポーカーのプレイヤー情報を記録・共有</p>
+          <h1 className="text-4xl font-bold text-white mb-4">プレイヤートラッカー</h1>
+          <p className="text-slate-300 mb-8">プレイヤー情報を記録・共有</p>
           <Button onClick={() => setIsAuthDialogOpen(true)} className="bg-blue-600 hover:bg-blue-700">
             <LogIn className="h-4 w-4 mr-2" />
             ログイン / アカウント作成
@@ -148,8 +148,8 @@ export default function HomePage() {
         {/* ヘッダー */}
         <div className="flex justify-between items-center mb-8">
           <div className="text-center flex-1">
-            <h1 className="text-4xl font-bold text-white mb-2">🃏 ポーカープレイヤートラッカー</h1>
-            <p className="text-slate-300">アミューズメントポーカーのプレイヤー情報を記録・共有</p>
+            <h1 className="text-4xl font-bold text-white mb-2">プレイヤートラッカー</h1>
+            <p className="text-slate-300">プレイヤー情報を記録・共有</p>
           </div>
           <div className="flex items-center gap-4">
             <PWAInstallButton />
