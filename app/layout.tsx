@@ -8,7 +8,7 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "ポーカープレイヤートラッカー",
-  description: "アミューズメントポーカーのプレイヤー情報を記録・共有",
+  description: "",
   manifest: "/manifest.json",
   themeColor: "#1e293b",
   appleWebApp: {
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: "ポーカープレイヤートラッカー",
     title: "ポーカープレイヤートラッカー",
-    description: "アミューズメントポーカーのプレイヤー情報を記録・共有",
+    description: "",
   },
   icons: {
     shortcut: "/icon-192x192.png",
