@@ -145,17 +145,19 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 to-slate-800">
       <div className="container mx-auto px-4 py-8">
-        {/* ヘッダー */}
-        <div className="flex justify-between items-center mb-8">
-          <div className="text-center flex-1">
-            <h1 className="text-4xl font-bold text-white mb-2">プレイヤートラッカー</h1>
-            <p className="text-slate-300">プレイヤー情報を記録・共有</p>
+        {/* ヘッダー: スマホでのレイアウト崩れを防ぐためレスポンシブデザインを適用 */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
+          <div className="text-center">
+            {/* スマホ用にフォントサイズを調整し、PCでは元のサイズになるように変更 */}
+            <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">プレイヤートラッカー</h1>
+            <p className="text-slate-300 text-sm md:text-base">プレイヤー情報を記録・共有</p>
           </div>
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-3">
             <PWAInstallButton />
             <div className="flex items-center gap-2 text-slate-300">
               <User className="h-4 w-4" />
-              <span className="text-sm">{profile?.nickname || user?.email}</span>
+              {/* 長いユーザー名がはみ出ないようにtruncateとmax-wで幅を制限 */}
+              <span className="text-sm truncate max-w-[150px]">{profile?.nickname || user?.email}</span>
             </div>
             <Button
               onClick={handleSignOut}
@@ -163,8 +165,9 @@ export default function HomePage() {
               size="sm"
               className="border-slate-600 text-slate-300 hover:bg-slate-700 bg-transparent"
             >
-              <LogOut className="h-4 w-4 mr-1" />
-              ログアウト
+              {/* スマホではアイコンのみ表示し、テキストを非表示にする */}
+              <LogOut className="h-4 w-4 sm:mr-1" />
+              <span className="hidden sm:inline">ログアウト</span>
             </Button>
           </div>
         </div>
